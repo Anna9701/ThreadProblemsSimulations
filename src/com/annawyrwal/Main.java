@@ -1,9 +1,7 @@
 package com.annawyrwal;
 
-
-import com.annawyrwal.deadlock.DeadlockSimulator;
-
 public class Main {
+    private static final int TIME_OUT = 5000;
 
     public static void main(String[] args) {
         if (args.length < 1) {
@@ -12,13 +10,13 @@ public class Main {
 
         switch (args[0]) {
             case "starvation":
-                new StarvationSimulator();
+                new com.annawyrwal.starvation.StarvationSimulator(TIME_OUT);
                 break;
             case "deadlock":
-                new DeadlockSimulator();
+                new com.annawyrwal.deadlock.DeadlockSimulator(TIME_OUT);
                 break;
             case "livelock":
-                new  com.annawyrwal.livelock.LivelockSimulator();
+                new  com.annawyrwal.livelock.LivelockSimulator(TIME_OUT);
                 break;
             default:
                 usage();

@@ -3,9 +3,11 @@ package com.annawyrwal.deadlock;
 import java.util.ArrayList;
 
 public class DeadlockSimulator {
-    private final int TIME_OUT = 5000;
+    private final int TIME_OUT;
 
-    public DeadlockSimulator () {
+    public DeadlockSimulator (final int timeout) {
+        TIME_OUT = timeout;
+
         ResourceHolder firstResource = new ResourceHolder(1, 500.5);
         ResourceHolder secondResource = new ResourceHolder(2, 765.21);
 

@@ -2,9 +2,11 @@ package com.annawyrwal.livelock;
 
 
 public class LivelockSimulator {
-    private final int TIME_OUT = 5000;
+    private final int TIME_OUT;
 
-    public LivelockSimulator() {
+    public LivelockSimulator(final int timeout) {
+        TIME_OUT = timeout;
+
         ResourceHolder firstHolder = new ResourceHolder(1, 500.0);
         ResourceHolder secondHolder = new ResourceHolder(2, 750.5);
 
