@@ -1,6 +1,8 @@
 package com.annawyrwal;
 
 
+import com.annawyrwal.deadlock.DeadlockSimulator;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class Main {
                 new DeadlockSimulator();
                 break;
             case "livelock":
-                new  LivelockSimulator();
+                new  com.annawyrwal.livelock.LivelockSimulator();
                 break;
             default:
                 usage();
