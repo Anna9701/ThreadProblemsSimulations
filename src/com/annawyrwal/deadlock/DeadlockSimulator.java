@@ -13,7 +13,7 @@ public class DeadlockSimulator {
 
         ArrayList<Thread> threads = new ArrayList<>();
 
-        Thread thread1 = new Thread() {
+        Thread thread1 = new Thread("FirstThread") {
             @Override
             public void run() {
                 ResourceHolder.transfer(firstResource, secondResource, 100.50);
@@ -26,7 +26,7 @@ public class DeadlockSimulator {
             }
         };
 
-        Thread thread2 = new Thread() {
+        Thread thread2 = new Thread("SecondThread") {
             @Override
             public void run() {
                 ResourceHolder.transfer(secondResource, firstResource, 78.50);
@@ -35,7 +35,7 @@ public class DeadlockSimulator {
             @Override
             public void interrupt() {
                 super.interrupt();
-                System.err.println("Thread interrupted");
+                System.err.println("Thread interrupted ");
             }
         };
 

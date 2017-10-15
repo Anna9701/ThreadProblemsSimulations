@@ -18,7 +18,7 @@ public class ResourceHolder {
             try {
                 Thread.sleep(10000);
             } catch (InterruptedException ex) {
-                System.err.println("Interrupted " + ex.getMessage());
+                System.err.println("Interrupted " + Thread.currentThread().getName());
                 return true;
             }
             resource -= amount;
@@ -32,7 +32,7 @@ public class ResourceHolder {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                System.err.println("Interrupted " + ex.getMessage());
+                System.err.println("Interrupted " + Thread.currentThread().getName());
                 return true;
             }
             resource += amount;

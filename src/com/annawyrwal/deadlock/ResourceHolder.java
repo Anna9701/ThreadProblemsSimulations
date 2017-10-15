@@ -17,7 +17,7 @@ public class ResourceHolder {
         try {
             Thread.sleep(1000); // some actions...
         } catch (InterruptedException ex) {
-            System.err.println("Interrupted " + ex.getMessage());
+            System.err.println("Interrupted " + Thread.currentThread().getName());
         }
         resources -= amount;
     }
@@ -26,12 +26,13 @@ public class ResourceHolder {
         try {
             Thread.sleep(1000); // some actions
         } catch (InterruptedException ex) {
-            System.err.println("Interrupted " + ex.getMessage());
+            System.err.println("Interrupted " + Thread.currentThread().getName());
         }
         resources += amount;
     }
 
     public static void transfer (ResourceHolder source, ResourceHolder destination, double amount) {
+        System.out.println(Thread.currentThread().getName() + " Transfer started ");
         source.lock.lock();
         source.takeResources(amount);
         destination.lock.lock();
@@ -39,6 +40,6 @@ public class ResourceHolder {
         destination.lock.unlock();
         source.lock.unlock();
 
-        System.out.println("Transfer finished");
+        System.out.println(Thread.currentThread().getName() + " Transfer finished");
     }
 }

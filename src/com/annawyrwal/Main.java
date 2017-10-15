@@ -1,7 +1,7 @@
 package com.annawyrwal;
 
 public class Main {
-    private static final int TIME_OUT = 5000;
+    private static final int TIME_OUT = 10000;
 
     public static void main(String[] args) {
         if (args.length < 1) {

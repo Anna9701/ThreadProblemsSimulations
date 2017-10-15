@@ -12,8 +12,9 @@ public class Transaction implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("Thread " + Thread.currentThread().getName() + " stared");
         while (!source.tryTransferResources(destination, amount))
             continue;
-        System.out.println(Thread.currentThread().getName() + " finished.");
+        System.out.println("Thread " + Thread.currentThread().getName() + " finished.");
     }
 }
